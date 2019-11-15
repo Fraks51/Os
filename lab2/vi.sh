@@ -6,8 +6,8 @@ for File in /var/log/*
 do
     if [[ $File =~ \.log$ ]]
     then
-         Files=$Files$File" "
+         Files="$Files$File "
     fi
 done
 
-wc -l $Files | tail -n 1 | cut -d ' ' -f 3
+wc -l $Files | tail -n 1 | tr -d " " | tr -d [a-я]
