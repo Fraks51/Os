@@ -36,11 +36,11 @@ then
                     line=$line"."$nowDate
                 done
                 mv $curFile $curFile$line
-                cp -r /home/frak/source$file $curFile
+                cp /home/frak/source$file $curFile
                 echo -e "$file is not actual now, made a new file: $file.$nowDate" >> /home/frak/backup-report
             fi
         else
-            cp -r /home/frak/source/$file $curFile
+            cp /home/frak/source/$file $curFile
             echo "Add new file: $file" >> /home/frak/backup-report
         fi
     done
@@ -49,7 +49,7 @@ else
     echo -e "Backup created: "$nowDate" in work directory: /home/frak/source/ \nFiles copied:" >> /home/frak/backup-report
     for file in $(ls /home/frak/source/ -1)
     do
-        cp -r /home/frak/source/$file $currentbackup$file
+        cp /home/frak/source/$file $currentbackup$file
         echo $file >> /home/frak/backup-report
     done  
 fi

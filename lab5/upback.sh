@@ -10,5 +10,5 @@ lastBackup=$(find /home/frak/Backup-* | grep -E "[0-9]{4}-[0-9]{2}-[0-9]{2}$" | 
 
 for file in $(ls $lastBackup);
 do
-    cp -r $lastBackup$file $restore$file
+    cp $lastBackup$file $restore$file
 done
