@@ -1,14 +1,15 @@
 #!/bin/bash
 arg=$1
 count=0
-for i in $(grep $1 ~/.trash.log)
+for i in $(grep $1 ~/.trash.log | grep -o "^//.*//$")
 do
-    if [[ $count -eq 1 ]]
+    i=$(echo "i" |cut -c 3- | cut -c 2)
+    if [[ $count -eq 0 ]]
     then
         link_name=$i
     fi
     
-    if [[ $count -eq 3 ]]
+    if [[ $count -eq 1 ]]
     then
         echo $i
         echo "Do you want untrash file? (y/n)"

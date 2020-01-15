@@ -11,7 +11,7 @@ fi
 
 num=$(cat ~/.trash/count)
 ln $arg ~/.trash/$num
-echo "link: $num path: $PWD/$1" >> ~/.trash.log
+echo "link: //$num// path: //$PWD/$1//" >> ~/.trash.log
 rm $1
 (( num++ ))
 echo $num > ~/.trash/count
